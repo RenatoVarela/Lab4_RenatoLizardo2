@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <sstream>
 
 using namespace std;
 
@@ -20,12 +21,16 @@ char** labMatrix=NULL;
 
 
 string cadena = "";
+stringstream trampa;
+string total = "";
 int tamano = 0;
+char cad1 , cad2, cad3;
 
 cout<<"INgrese la primera cadena"<<endl;
 cin>> cadena;
 
   tamano = cadena.length();
+  cout <<"----------------------------------------" <<endl;
 
 
 	labMatrix = crearMatriz(tamano);
@@ -35,22 +40,83 @@ cin>> cadena;
 		
 
 	}
-/*
 
-	for( int i = 0; i < size; i++){
-     for( int j = 0; j < size; j++){
-        labMatrix[i][j] = ;
+
+	for( int i = 1; i < tamano; i++){
+        for( int j = 0; j < tamano; j++){
+           //  cout<<tamano <<endl;  
+	     if(j==0){
+
+		     if(labMatrix[i-1][1] == '^' ){
+
+			     labMatrix[i][j] = '^';
+
+		     }else{
+
+			     labMatrix[i][j] = '.';
+
+
+
+		     }
+
+	     }else{
+
+
+
+		     if(j == (tamano - 1)){
+
+			     if(labMatrix[i-1][(tamano-2)] == '^' ){
+				     labMatrix[i][j] = '^';
+
+
+			     }else{
+
+				     labMatrix[i][j] = '.';
+
+			     }
+
+		     }else{
+
+
+			     cad1 = labMatrix[i-1][j-1];
+			     cad2 = labMatrix[i-1][j];
+			     cad3 = labMatrix[i-1][j+1];
+
+			     trampa <<cad1 <<cad2 <<cad3;
+			     total = trampa.str();
+
+		              
+			
+		     //		cout<<"----"<<total <<"----"<<endl;
+
+		if(total=="^^." || total== ".^^" || total == "^.." || total == "..^"){
+	
+			
+
+			labMatrix[i][j] = '^';
+
+
+		}else{
+			labMatrix[i][j] = '.';
+
+		}
+
+		trampa.str("");		
+
+		total = "";
+
+
+		     }
+
+	    		 }
+
 
 		}
 
 	}
 
-*/
 
-
-
-
-	 printMatrix(labMatrix,tamano);
+        printMatrix(labMatrix,tamano);
 
 
         liberarMatriz(labMatrix,tamano);
@@ -83,7 +149,7 @@ void printMatrix(char** matrix,int size){
 
         for(int i = 0 ; i < size ; i ++){
                 for(int j = 0; j < size ; j++) {
-                        cout << matrix[i][j] << " ";
+                        cout << matrix[i][j];
 
                 }
                 cout<<endl;
