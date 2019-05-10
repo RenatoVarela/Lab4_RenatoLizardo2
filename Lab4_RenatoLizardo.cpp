@@ -43,7 +43,7 @@ cin>> cadena;
            //  cout<<tamano <<endl;  
 	     if(j==0){
 
-		     if(labMatrix[i-1][1] == '^' ){
+		     if(labMatrix[i-1][1] == '^'){
 
 			     labMatrix[i][j] = '^';
 
