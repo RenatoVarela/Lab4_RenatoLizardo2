@@ -5,11 +5,7 @@
 using namespace std;
 
 char** crearMatriz(int);
-
-//liberar memoria de la matriz
 void liberarMatriz(char**& ,int);
-
-//imprimir la matriz
 void printMatrix(char**,int);
 
 int main(){
