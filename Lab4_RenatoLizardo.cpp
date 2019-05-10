@@ -3,7 +3,7 @@
 
 using namespace std;
 
-char** CrearMatriz(int);
+char** crearMatriz(int);
 
 //liberar memoria de la matriz
 void liberarMatriz(char**& ,int);
@@ -25,19 +25,27 @@ int tamano = 0;
 cout<<"INgrese la primera cadena"<<endl;
 cin>> cadena;
 
-cout<<"Ingrese el tamano de la matriz"<<endl;
-cin >> tamano;
+  tamano = cadena.length();
 
 
-	labMatrix = crearMatriz(tamano,cadena);
+	labMatrix = crearMatriz(tamano);
 
+	for(int c = 0; c < tamano; c++){
+		labMatrix[0][c] = cadena[c];
+		
 
+	}
+/*
 
+	for( int i = 0; i < size; i++){
+     for( int j = 0; j < size; j++){
+        labMatrix[i][j] = ;
 
+		}
 
+	}
 
-
-
+*/
 
 
 
@@ -48,11 +56,11 @@ cin >> tamano;
         liberarMatriz(labMatrix,tamano);
 
 
-
+return 0;
 }
 
 
-char** CrearMatriz(int size, string cadena){
+char** crearMatriz(int size){
 
  char** matrix = NULL;
  matrix = new char*[size];
