@@ -22,7 +22,7 @@ string total = "";
 int tamano = 0;
 char cad1 , cad2, cad3;
 
-cout<<"INgrese la primera cadena"<<endl;
+cout<<"Ingrese la primera cadena"<<endl;
 cin>> cadena;
 
   tamano = cadena.length();
