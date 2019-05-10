@@ -144,8 +144,8 @@ cin>> cadena;
 	}
 
 
-	cout<<puntos <<"Existe esta cantidad de puntos" <<endl;
-	cout<<trampasC <<"Existe esta cantidad de trampas" <<endl;
+	cout<<puntos <<" Existe esta cantidad de puntos" <<endl;
+	cout<<trampasC <<" Existe esta cantidad de trampas" <<endl;
 
 
         liberarMatriz(labMatrix,tamano);
