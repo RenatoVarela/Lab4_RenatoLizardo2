@@ -115,6 +115,39 @@ cin>> cadena;
         printMatrix(labMatrix,tamano);
 
 
+	int puntos = 0 , trampasC = 0;
+
+
+	for(int y = 0 ; y < tamano ; y++){
+
+		for(int z = 0 ; z < tamano; z++){
+			if(labMatrix[y][z] == '.'){
+
+				puntos++;
+
+			}
+			
+			if(labMatrix[y][z] == '^'){
+
+
+				trampasC++;
+			}
+
+
+
+
+		}
+
+
+
+
+	}
+
+
+	cout<<"Existe esta cantidad de puntos" <<endl;
+	cout<<"Existe esta cantidad de trampas" <<endl;
+
+
         liberarMatriz(labMatrix,tamano);
 
 
